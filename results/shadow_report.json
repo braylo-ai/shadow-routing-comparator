@@ -1,0 +1,171 @@
+{
+  "kind": "SIMULATED (mock models, synthetic traffic, modelled latency)",
+  "date": "2026-11-09",
+  "dataset": "data/synthetic_traffic.jsonl",
+  "requests": 2000,
+  "shadow_percent": 25.0,
+  "primary": "prod-large@prompt-v7",
+  "candidate": "cand-small@prompt-v8",
+  "router_stats": {
+    "requests": 2000,
+    "mirrored": 532,
+    "shadow_errors": 0,
+    "shadow_timeouts": 0,
+    "shadow_dropped": 0
+  },
+  "verdict": "HOLD",
+  "gate_failures": [
+    "trajectory exact match 0.8929 < 0.95",
+    "category account: exact match 0.8784 < 0.9",
+    "category faq: mean text similarity 0.8079 < 0.85",
+    "category refund: exact match 0.7241 < 0.9",
+    "critical tool skipped in 32 cases (['check_refund_policy'])"
+  ],
+  "gates": {
+    "min_trajectory_exact_match": 0.95,
+    "min_category_exact_match": 0.9,
+    "max_missing_critical_tool_rate": 0.0,
+    "min_mean_text_similarity": 0.7,
+    "min_category_text_similarity": 0.85,
+    "max_shadow_error_rate": 0.01
+  },
+  "summary": {
+    "mirrored": 532,
+    "shadow_error_rate": 0.0,
+    "trajectory_exact_match": 0.8929,
+    "mean_text_similarity": 0.9187,
+    "p10_text_similarity": 0.9333,
+    "missing_critical_tool_rate": 0.0602,
+    "latency_ms_p50_primary": 1322.81,
+    "latency_ms_p50_shadow": 594.61,
+    "latency_ms_p95_primary": 1558.59,
+    "latency_ms_p95_shadow": 725.27,
+    "cost_usd_primary": 1.710267,
+    "cost_usd_shadow": 0.140699,
+    "cost_ratio_shadow_vs_primary": 0.0823
+  },
+  "by_category": {
+    "account": {
+      "n": 74,
+      "trajectory_exact_match": 0.8784,
+      "mean_text_similarity": 0.9513,
+      "missing_tool_cases": 0,
+      "order_mismatch_cases": 9,
+      "low_text_similarity_cases": 0,
+      "extra_call_cases": 0
+    },
+    "faq": {
+      "n": 120,
+      "trajectory_exact_match": 1.0,
+      "mean_text_similarity": 0.8079,
+      "missing_tool_cases": 0,
+      "order_mismatch_cases": 0,
+      "low_text_similarity_cases": 24,
+      "extra_call_cases": 0
+    },
+    "order_status": {
+      "n": 167,
+      "trajectory_exact_match": 0.9042,
+      "mean_text_similarity": 0.9536,
+      "missing_tool_cases": 0,
+      "order_mismatch_cases": 0,
+      "low_text_similarity_cases": 0,
+      "extra_call_cases": 16
+    },
+    "refund": {
+      "n": 116,
+      "trajectory_exact_match": 0.7241,
+      "mean_text_similarity": 0.9553,
+      "missing_tool_cases": 32,
+      "order_mismatch_cases": 0,
+      "low_text_similarity_cases": 0,
+      "extra_call_cases": 0
+    },
+    "smalltalk": {
+      "n": 55,
+      "trajectory_exact_match": 1.0,
+      "mean_text_similarity": 0.9338,
+      "missing_tool_cases": 0,
+      "order_mismatch_cases": 0,
+      "low_text_similarity_cases": 0,
+      "extra_call_cases": 0
+    }
+  },
+  "worst_examples": [
+    {
+      "id": "req-01374",
+      "category": "account",
+      "trajectory": {
+        "exact_match": false,
+        "same_tool_set": true,
+        "same_order": false,
+        "missing_tools": [],
+        "extra_tools": [],
+        "duplicate_calls": 0,
+        "arg_mismatches": [],
+        "edit_distance": 2
+      },
+      "text_similarity": 0.9492
+    },
+    {
+      "id": "req-01613",
+      "category": "account",
+      "trajectory": {
+        "exact_match": false,
+        "same_tool_set": true,
+        "same_order": false,
+        "missing_tools": [],
+        "extra_tools": [],
+        "duplicate_calls": 0,
+        "arg_mismatches": [],
+        "edit_distance": 2
+      },
+      "text_similarity": 0.9492
+    },
+    {
+      "id": "req-01254",
+      "category": "account",
+      "trajectory": {
+        "exact_match": false,
+        "same_tool_set": true,
+        "same_order": false,
+        "missing_tools": [],
+        "extra_tools": [],
+        "duplicate_calls": 0,
+        "arg_mismatches": [],
+        "edit_distance": 2
+      },
+      "text_similarity": 0.95
+    },
+    {
+      "id": "req-01658",
+      "category": "account",
+      "trajectory": {
+        "exact_match": false,
+        "same_tool_set": true,
+        "same_order": false,
+        "missing_tools": [],
+        "extra_tools": [],
+        "duplicate_calls": 0,
+        "arg_mismatches": [],
+        "edit_distance": 2
+      },
+      "text_similarity": 0.95
+    },
+    {
+      "id": "req-00129",
+      "category": "account",
+      "trajectory": {
+        "exact_match": false,
+        "same_tool_set": true,
+        "same_order": false,
+        "missing_tools": [],
+        "extra_tools": [],
+        "duplicate_calls": 0,
+        "arg_mismatches": [],
+        "edit_distance": 2
+      },
+      "text_similarity": 0.9545
+    }
+  ]
+}
